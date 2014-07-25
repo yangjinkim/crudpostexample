@@ -1,0 +1,20 @@
+form(method="GET", action="/create")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO CREATE NEW ACCOUNT
+  input(type="submit")
+form(method="GET", action="/delete")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO DELETE
+  input(type="submit")
+form(method="GET", action="/update")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO UPDATE
+  input(type="submit")
+form(method="GET", action="/read")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO READ
+  input(type="submit")
+
+block content
+- for(var i=0; i<title.length; i++)
+  h1='name: '+ title[i].name +' age: '+ title[i].age

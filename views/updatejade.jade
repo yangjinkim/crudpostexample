@@ -1,0 +1,12 @@
+form(method="POST", action="/dbupdate")
+ input(type="hidden", name="_method", value="PUT")
+ p CURRENT NAME
+  input(type="text", name="currentname")
+ p CURRENT AGE
+  input(type="number", name="currentage")
+ p NEW NAME
+  input(type="text", name="newname")
+ p NEW AGE
+  input(type="number", name="newage")
+ p
+  input(type="submit")
