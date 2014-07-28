@@ -28,6 +28,9 @@ mongoose.connect('mongodb://localhost/doomdb');
 app.get('/control', function(req, res){
 	res.render('controljade');
 });*/
+app.get('/test', function(req, res){
+	res.render('testjade',{melong: '12345'});
+});
 app.get('/create', function(req, res){
 	res.render('createjade');
 });

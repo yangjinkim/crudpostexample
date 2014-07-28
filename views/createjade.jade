@@ -1,8 +1,10 @@
-form(method="POST", action="/dbcreate")
- input(type="hidden", name="_method", value="PUT")
- p NAME
-  input(type="text", name="name")
- p AGE
-  input(type="number", name="age")
- p
-  input(type="submit")
+
+fieldset
+ form(method="POST", action="/dbcreate")
+  input(type="hidden", name="_method", value="PUT")
+  p NAME
+   input(type="text", name="name", placeholder="input name here")
+  p AGE
+   input(type="number", name="age", placeholder="input age here")
+  p
+   input(type="submit")
