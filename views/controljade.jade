@@ -21,9 +21,10 @@ script(src="/js/script.js")
  form(method="GET", action="/read")
  input(type="hidden", name="_method", value="PUT")
  p CLICK HERE TO READ
-div(class="row")
+div(class="row panel")
  block content
  - for(var i=0; i<title.length; i++){
+   div(class="panel")
     label= "USER INFORMATION "+(i+1) 
     form(method='POST', action="/dbupdate")
      p USERNAME
