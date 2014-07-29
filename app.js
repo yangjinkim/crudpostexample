@@ -109,8 +109,10 @@ app.post('/dbdelete', function(req, res){
 });
 
 });
+
 app.post('/dbupdate', function(req, res){
 	model.update({name: req.body.currentname, age: req.body.currentage}, {$set: {name:req.body.newname, age:req.body.newage}},{multi:false},function(err,res){});
+
 res.redirect('/control');
 });
 app.post('/dbread', function(req,res){ var thisage;

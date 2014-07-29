@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 	}*/
 
-	$("button").click(function(){
+	$(".deletebutton").click(function(){
 		console.log($(this).attr('name')+"post");
 		$.post("/dbdelete",
 		{
@@ -23,4 +23,29 @@ $(document).ready(function() {
 		location.reload();
 	});
 	
+	$(".updatebutton").click(function(){
+		$.post("/dbupdate",
+		{
+			currentname: $(this).parent().siblings(".username").children().eq(0).children().eq(0).attr("value"),
+			currentage: $(this).prev().children().eq(0).attr("value"),
+			newname: $(this).parent().siblings(".username").children().eq(0).children().eq(0).prop("value"),
+			newage: $(this).prev().children().eq(0).prop("value")
+		});
+		location.reload();
+	});
+
+	$(".createbutton").click(function(){
+		$.post("/dbcreate",
+		{
+			name: $(this).parent().siblings(".namep").children().eq(0).prop("value"),
+			age: $(this).parent().siblings(".agep").children().eq(0).prop("value")
+		});
+		location.reload()
+	});
+		
 });
+
+
+
+
+

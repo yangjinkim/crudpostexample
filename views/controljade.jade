@@ -45,6 +45,8 @@ div(class="row panel")
 -}
 
 
+
+
 div(class="row") 
  label CREATE ACCOUNT
  -for(var i=0; i<title.length; i++){
@@ -52,14 +54,14 @@ div(class="row")
  -}
 
 div(class="row")
- form(method="POST", action="/dbcreate")
-  input(type="hidden", name="_method", value="PUT")
   p NAME
-   input(type="text", name="name", placeholder="input name here")
+  div(class="namep")
+   input(type="text", name="name", placeholder="input name here", value="")
   p AGE
-   input(type="number", name="age", placeholder="input age here")
+  div(class="agep")
+   input(type="number", name="age", placeholder="input age here",value="")
   p
-   input(type="submit", href="#",class="button")
+   button( href="#",class="large-12 columns createbutton radius round tiny") create
 
 //form
  div(class="row")
