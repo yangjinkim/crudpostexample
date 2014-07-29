@@ -26,20 +26,17 @@ div(class="row panel")
  - for(var i=0; i<title.length; i++){
    div(class="panel")
     label= "USER INFORMATION "+(i+1) 
-    form(method='POST', action="/dbupdate")
      p USERNAME
-     div(class="row")
+     div(class="row username")
       div(class="small-10 columns")
-       input(type='hidden', name='currentname', value=title[i].name)
-       input(class="small-2 columns",  type="text", name="newname", value=title[i].name)
-      button(id='abcd'+i, name=title[i].name, age=title[i].age, class='small-2 columns button tiny alert radius round' ) delete 
+       input(class="small-2 columns nameinput",  type="text", name="newname", value=title[i].name)
+      button(name=title[i].name, age=title[i].age, class='small-2 columns deletebutton  button tiny alert radius round' ) delete 
      br
      p USER AGE
-     div(class="row")
-      input(type='hidden', name='currentage', value=title[i].age)
+     div(class="row userage")
       div(class="small-10 columns")
        input(type="number", name="newage", value=title[i].age)
-      input(class="small-2 columns", type="submit",href="#", class="button tiny success radius round")
+      button(class="small-2 columns",href="#", class="button updatebutton tiny success radius round") update
  - }
 //making gap between two methods
 
