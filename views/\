@@ -1,0 +1,47 @@
+script(src="/components/jquery/dist/jquery.js")
+script(src="/js/script.js")
+form(method="GET", action="/create")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO CREATE NEW ACCOUNT
+  input(type="submit")
+form(method="GET", action="/delete")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO DELETE
+  input(type="submit")
+form(method="GET", action="/update")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO UPDATE
+  input(type="submit")
+form(method="GET", action="/read")
+ input(type="hidden", name="_method", value="PUT")
+ p CLICK HERE TO READ
+  input(type="submit")
+fieldset
+ block content
+ - for(var i=0; i<title.length; i++){
+   h1='name: '+ title[i].name +' age: '+ title[i].age
+   input(id="abcd",type="submit", name=title[i].name, age=title[i].age)
+ - }
+
+fieldset
+ form(method="POST", action="/dbcreate")
+  input(type="hidden", name="_method", value="PUT")
+  p NAME
+   input(type="text", name="name", placeholder="input name here")
+  p AGE
+   input(type="number", name="age", placeholder="input age here")
+  p
+   input(type="submit")
+
+h1 userlist
+
+ #tableset
+  table
+   thead
+    th username
+    th email
+    th delete
+   tbody
+    td dddd
+    td dafasf
+    td dfdfd 

@@ -17,6 +17,14 @@ module.exports = function (grunt) {
         file: 'bin/www'
       }
     },
+
+    copy: {
+	config: {
+	  src: 'a.example',
+	  dest: 'a.conf'
+	}
+    },
+
     watch: {
       options: {
         nospawn: true,
@@ -71,4 +79,5 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', ['develop', 'watch']);
+  grunt.registerTask('build', ['copy']);
 };

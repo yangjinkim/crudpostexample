@@ -1,34 +1,111 @@
-
-form(method="GET", action="/create")
+link(href='/components/foundation/css/foundation.css', rel='stylesheet')
+script(src="/components/jquery/dist/jquery.js")
+script(src="/components/foundation/js/foundation.js")
+script(src="/js/script.js")
+//
+ form(method="GET", action="/create")
  input(type="hidden", name="_method", value="PUT")
  p CLICK HERE TO CREATE NEW ACCOUNT
   input(type="submit")
-form(method="GET", action="/delete")
+//
+ form(method="GET", action="/delete")
  input(type="hidden", name="_method", value="PUT")
  p CLICK HERE TO DELETE
   input(type="submit")
-form(method="GET", action="/update")
+//
+ form(method="GET", action="/update")
  input(type="hidden", name="_method", value="PUT")
  p CLICK HERE TO UPDATE
   input(type="submit")
-form(method="GET", action="/read")
+//
+ form(method="GET", action="/read")
  input(type="hidden", name="_method", value="PUT")
  p CLICK HERE TO READ
-  input(type="submit")
-fieldset
+div(class="row")
  block content
- - for(var i=0; i<title.length; i++)
-   h1='name: '+ title[i].name +' age: '+ title[i].age
+ - for(var i=0; i<title.length; i++){
+    label= "USER INFORMATION "+(i+1) 
+    form(method='POST', action="/dbupdate")
+     p USERNAME
+     div(class="row")
+      div(class="small-10 columns")
+       input(type='hidden', name='currentname', value=title[i].name)
+       input(class="small-2 columns",  type="text", name="newname", value=title[i].name)
+      button(id='abcd'+i, name=title[i].name, age=title[i].age, class='small-2 columns button tiny alert radius round' ) delete 
+     br
+     p USER AGE
+     div(class="row")
+      input(type='hidden', name='currentage', value=title[i].age)
+      div(class="small-10 columns")
+       input(type="number", name="newage", value=title[i].age)
+      input(class="small-2 columns", type="submit",href="#", class="button tiny success radius round")
+ - }
+//making gap between two methods
 
-h1 userlist
+-for(var i=0; i<10; i++){
+ br
+-}
 
- #tableset
-  table
-   thead
-    th username
-    th email
-    th delete
-   tbody
-    td dddd
-    td dafasf
-    td dfdfd 
+
+div(class="row") 
+ label CREATE ACCOUNT
+ -for(var i=0; i<title.length; i++){
+   form(method='POST', value=title[i].name)
+ -}
+
+div(class="row")
+ form(method="POST", action="/dbcreate")
+  input(type="hidden", name="_method", value="PUT")
+  p NAME
+   input(type="text", name="name", placeholder="input name here")
+  p AGE
+   input(type="number", name="age", placeholder="input age here")
+  p
+   input(type="submit", href="#",class="button")
+
+//form
+ div(class="row")
+  div(class= "large-12 colums")
+   label inputlabelhaha
+    input(type="text" placeholder="large-12.columns")
+ div(class="row")
+  div(class="large-4 columns")
+   label Input Label
+    input(type="text" placeholder="large-4.columns")
+  div(class="large-4 columns")
+   label Input Label
+    input(type="text" placeholder="large-4. columns")
+  div(class="large-4 columns")
+   div(class="row collapse")
+    label Input label
+    div(class="small-9 columns")
+     input(type="text" placeholder="thisis placeholder")
+    div(class="small-3 columns")
+     span(class="postfix") .com
+ 
+ div(class="row")
+  div(class="large-12 columns")
+   label select box
+    select
+     option(value="husker") husker
+     option(value="starbuck") starbuckssss
+     option(value="hotdog") hotdog
+     option(value="apollo") apollo
+ div(class="row")
+  div(class="large-6 columns")
+   label choose your favorite
+   input(type="radio" name="pokemon" value="Red" id="pokemonred")
+   label(for="pokemonred") red
+   input(type="radio" name="pokemon" value="Blue" id="pokemonblue")
+   label(for="pokemonblue") blue
+  div(class="large-6 columns")
+   label check these out
+   input(id="checkbox1" type="checkbox")
+   label(for="checkbox1") CHECKBOX1
+   input(id="checkbox2" type="checkbox")
+   label(for="checkbox2") CHECKBOX2
+ div(class="row")
+  div(class="large-12 columns")
+   label textarea label
+    textarea(placeholder="small-12.colmuddadsfa")
+     

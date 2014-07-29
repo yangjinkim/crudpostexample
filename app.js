@@ -101,6 +101,8 @@ app.post('/dbcreate', function(req, res){
 	});
 });
 app.post('/dbdelete', function(req, res){
+	console.log(req.body);
+	console.log("post recieved");
 	model.remove({name: req.body.name,age: req.body.age},function(err){if(err) console.log("error occured deleted by post"); 
 	else console.log("deleted by post");
 	res.redirect('/control');
